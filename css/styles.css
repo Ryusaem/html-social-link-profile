@@ -1,9 +1,11 @@
 /* --- CUSTOM VARIABLE --- */
 :root {
-    --primary-color: #1f1f1f;
-    --secondary-color: #aec95f;
-    --background-color: #141414;
-    --button-color: #333;
+    /* --primary-color: #1f1f1f; */
+    --primary-color: hsl(0, 0%, 12%);
+    --secondary-color: hsl(75, 94%, 57%);
+    --background-color: hsl(0, 0%, 8%);
+    --gray-color: hsl(0, 0%, 20%);
+    --white-color: hsl(0, 0%, 100%);
 }
 
 /* --- GLOBAL STYLES --- */
@@ -13,21 +15,21 @@
 }
 
 body {
+    font-family: "Inter", sans-serif;
+    height: 100vh;
     background-color: var(--background-color); 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 100vh;
     margin: 0;
 }
 
-h1 {
-    color: white;
+h1, p {
+    color: var(--white-color);
 }
 
 p {
-    color: white;
     margin-bottom: 20px;
     font-size: 14px;
 }
@@ -52,7 +54,6 @@ img {
     display: flex;
     flex-direction: column;
     max-height: 83vh;
-    flex: 1;
 }
 
 .subtitle {
@@ -74,43 +75,50 @@ img {
     font-weight: bold;
     width: 100%;
     padding: 8px 0;
-    background-color: var(--button-color);
+    background-color: var(--gray-color);
     font-size: .9em;
     border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+
 }
 
-.button:hover {
-    background-color: var(--secondary-color);
+.button:active, .button:hover {
+    transform: scale(1.1); /* Slightly scale down the button when pressed */
+    background-color: var(--secondary-color); /* Change background color on press */
+    color: var(--gray-color);
 }
 
-
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
 
 /* --- FOOTER --- */
 
-.footer {
-    /* height: 72px; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+.attribution { 
+    font-size: 11px; 
+    color: var(--white-color);
+    padding: 20px 0;
+    margin-top: auto; /*Ensures it sticks to the bottom*/
 }
 
-.footer a {
-    text-decoration: none;
-    color: yellowgreen;
-    margin-top: -20px
+.footer, .attribution {
+    width: 100%;
+    text-align: center; /* Ensures text is centered */
 }
+
+.footer a, .attribution a{
+    text-decoration: none;
+    color: greenyellow;
+}
+
+
+/* --- MEDIA QUERY (RESPONSIVE) */
 
 @media screen and (max-width: 768px) {
     .container {
-        max-width: 95vw;
-        max-height: 60vh;
+        margin-top: 30px;  /*Adjusts the margin-top for smaller screens*/
+        max-width: 95vw;  /*Adjusts the width for smaller screens*/
     }
 
     img {
         width: 20vw;
-    }
+    }   
     
 }
