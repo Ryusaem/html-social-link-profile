@@ -34,7 +34,54 @@ Users should be able to:
 
 ## My process
 
--
+- Using Version Control: Utilize Git for version control. Make regular commits to track changes and manage versions. This is helpful for undoing changes and understanding the evolution of your project.
+- Responsive Design: Implement responsive design practices to ensure that your social link profile looks good on all devices.
+- Choose a Hosting Platform: Deploy your project on a reliable web hosting platform like GitHub Pages, Vercel, Netlify, or a similar service.
+
+- Create HTML Structure:
+
+  - The boilerplate has been made by Frontend Mentor.
+  - Head Section: In the <head>, link your CSS files, add a title with <title>, and include any meta tags needed for responsiveness (<meta name="viewport" content="width=device-width, initial-scale=1.0">).
+  - Body Content: In the <body>, lay out your content using semantic HTML:
+
+    - Header: Use <header> for profile image and name.
+    - Main Section: Use <main> for bio and social links. Each social link can be an <a> tag inside a <div> or <section>.
+    - Footer: Use <footer> for copyright information and additional links.
+
+  - Set Up a CSS File:
+
+    - Link a CSS file in the <head> section of your HTML using <link rel="stylesheet" href="styles.css">.
+    - Reset style:
+
+    ```css
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    ```
+
+    - Layout Styling: Use Flexbox or Grid to layout your sections. For example, to center content and layout vertically:
+
+    ```css
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    ```
+
+    - Responsive Design: Use media queries to adjust styles on different screen sizes. For example:
+
+    ```css
+    @media (max-width: 768px) {
+      .container {
+        max-width: 90vw;
+      }
+    }
+    ```
 
 ### Built with
 
@@ -94,6 +141,20 @@ Users should be able to:
         margin-top: 30px;  /*Adjusts the margin-top for smaller screens*/
         max-width: 95vw;  /*Adjusts the width for smaller screens*/
     }
+```
+
+- Learn that using the attribute "rel="noopener noreferrer" is a good measure to prevent security risk. That also remind me on how to open a page in a new page 'target="\_blank" '. I also learn that using attribute 'aria-label' is a good way to allow people that use screen reader to know when you are referencing to a link.
+
+```html
+<a
+  href="https://github.com/Ryusaem"
+  class="button"
+  aria-label="Visit GitHub profile"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  GitHub
+</a>
 ```
 
 ### Continued development
